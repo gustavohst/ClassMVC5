@@ -1,7 +1,61 @@
-﻿
+﻿@model Introducao.Models.Pessoa
+
 @{
     ViewBag.Title = "Index";
 }
 
-<h2> Curso de ASP MVC 5 <h2>
+<h2> Curso de ASP MVC 5 </h2>
 <p> Curso feito para Gustavo Tenório.</p>
+
+
+<br />
+
+<p> View Tipada </p>
+
+<form action="/Home/Lista" method="POST">
+    <fieldset>
+        <legend>Informações de Pessoas</legend>
+    </fieldset>
+
+    <div>
+        <label for="PessoaId">Código</label>
+    </div>
+    <div>
+        <input type="number" value="@Model.PessoaId" name="PessoaId" />
+    </div>
+
+    <div>
+        <label for="Nome">NOme</label>
+    </div>
+    <div>
+        <input type="text" value="@Model.Nome" name="Nome" />
+    </div>
+
+    <div>
+        <label for="Tipo">Tipo</label>
+    </div>
+    <div>
+        <input type="text" value="@Model.Tipo" name="Tipo" />
+    </div>
+
+    <input type="submit" value="Enviar"/>
+
+</form>
+
+<br />
+
+<p> View Tipada Simples </p>
+<p> @Model.PessoaId</p>
+<p> @Model.Nome</p>
+<p> @Model.Tipo</p>
+
+
+@*Calling view data*@
+@*<p> @ViewData["PessoaId"]</p>
+    <p> @ViewData["Nome"]</p>
+    <p> @ViewData["Tipo"]</p>*@
+
+@*Calling view bag*@
+@*<p> @ViewBag.id</p>
+    <p> @ViewBag.nome</p>
+    <p> @ViewBag.tipo</p>*@
