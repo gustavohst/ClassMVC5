@@ -22,17 +22,8 @@ namespace Introducao.Controllers
                 Tipo = "Administrador"
             };
 
-            /*  Associating data with view
-            ViewData["PessoaId"] = pessoa.PessoaId;
-            ViewData["Nome"] = pessoa.Nome;
-            ViewData["Tipo"] = pessoa.Tipo;
-            */       
-            /* Associating data with view bag
-            ViewBag.id = pessoa.PessoaId;
-            ViewBag.nome = pessoa.Nome;
-            ViewBag.tipo = pessoa.Tipo;
-            */
-            return View(pessoa);
+
+            return View(pessoa); //View Tipada
         }
 
         public ActionResult Contatos()
@@ -40,14 +31,10 @@ namespace Introducao.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Lista(int PessoaId, string Nome, string Tipo)
+        [HttpPost] //Uso [HttpPost] apenas no metodo POST
+        public ActionResult Lista(Pessoa pessoa)
         {
-            ViewData["PessoaId"] = PessoaId;
-            ViewData["Nome"] = Nome;
-            ViewData["Tipo"] = Tipo;
-            
-            return View();
+            return View(pessoa);
         }
 
     }
