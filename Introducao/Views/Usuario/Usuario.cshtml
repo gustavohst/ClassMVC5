@@ -59,28 +59,18 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.Email)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Email)
-            @Html.ValidationMessageFor(model => model.Email)
-        </div>
-
-        <div class="editor-label">
             @Html.LabelFor(model => model.Senha)
-
         </div>
         <div class="editor-field">
             @Html.PasswordFor(model => model.Senha)
-            @Html.ValidationMessageFor(model => model.Senha)
         </div>
+
         <div class="editor-label">
             @Html.LabelFor(model => model.ConfirmarSenha)
 
         </div>
         <div class="editor-field">
             @Html.PasswordFor(model => model.ConfirmarSenha)
-            @Html.ValidationMessageFor(model => model.ConfirmarSenha)
         </div>
 
 
@@ -89,7 +79,7 @@
     </fieldset>
 
     @section Scripts{ 
-        @Scripts.Render("~/budles/jqueryval");
+        @Scripts.Render("~/bundles/jqueryval");
     }
 
 }

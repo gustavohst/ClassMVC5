@@ -1,8 +1,6 @@
 ﻿using Introducao.Models;
-using System;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace Introducao.Controllers
@@ -25,6 +23,11 @@ namespace Introducao.Controllers
                 ModelState.AddModelError("Nome", "O campo nome é obrigatório");
             }
 
+            if (usuario.Senha != usuario.ConfirmarSenha)
+            {
+                ModelState.AddModelError("", "O campo senha deve ser identica");
+            }
+
             if (ModelState.IsValid)
             {
                 return View("Resultado", usuario);
@@ -35,6 +38,17 @@ namespace Introducao.Controllers
         public ActionResult Resultado(Usuario usuario)
         {
             return View(usuario);
+        }
+
+        public ActionResult LoginUnico(string login)
+        {
+            var bdExemplo = new Collection<string>
+            {
+                "Hugo",
+                "Freitas",
+                "Paula"
+            };
+            return Json(bdExemplo.All(x => x.ToLower() != login.ToLower()), JsonRequestBehavior.AllowGet);
         }
 
     }
