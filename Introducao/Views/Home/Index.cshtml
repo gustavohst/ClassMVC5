@@ -7,15 +7,18 @@
 <h2> Curso de ASP MVC 5 </h2>
 <p> Curso feito para Gustavo Tenório.</p>
 
+
+
+<br />
 <br />
 
 <p> View Tipada </p>
 
 @using (Html.BeginForm("Lista", "Home", FormMethod.Post))
 {
-    <fieldset>
-        <legend>Informações de Pessoas</legend>
-    </fieldset>
+<fieldset>
+    <legend>Informações de Pessoas</legend>
+
 
     <div>
         <b>@Html.LabelFor(x => x.PessoaId) </b>
@@ -39,11 +42,8 @@
     </div>
 
     <input type="submit" value="Enviar" />
+</fieldset>
+
+
+
 }
-
-<br />
-
-<p> View Tipada Simples </p>
-<p> @Model.PessoaId</p>
-<p> @Model.Nome</p>
-<p> @Model.Tipo</p>
